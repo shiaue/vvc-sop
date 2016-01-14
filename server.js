@@ -3,7 +3,7 @@ var cookieSession = require('cookie-session');
 var port = 8080;
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || port;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-
+var favicon = require('serve-favicon');
 express()
 	.set('view engine', 'ejs')
 	.use(express.static('./public'))
@@ -13,25 +13,8 @@ express()
 			user: JSON.stringify(req.session.user || null)
 		});
 	})
-	//.use(cookieSession({
-	//secret: "secret",
-	//cookie: {
-	//	maxAge: 1000 * 60 * 60
-	//}
-	//}))
-	//.listen(process.env.PORT || port);
+	.use(favicon(__dirname + '/public/images/favicon.ico'));
 	.listen(server_port, server_ip_address, function () {
 	console.log( "Listening on " + server_ip_address + ", server_port " + port )
 });
-// adding process.env.PORT allows heroku deployment
-//console.log("Wiki on localhost:"+ port);
 
-//setInterval(sessionCleanup, 1000*60*60*24);
-//
-//function sessionCleanup() {
-//	sessionStore.all(function(err, sessions) {
-//		for (var i = 0; i < sessions.length; i++) {
-//			sessionStore.get(sessions[i], function() {} );
-//		}
-//	});
-//}
