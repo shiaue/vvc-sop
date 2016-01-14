@@ -1,12 +1,9 @@
 var express = require('express');
 var cookieSession = require('cookie-session');
-var port = 3000;
+var port = 8080;
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || port;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
-server.listen(server_port, server_ip_address, function () {
-	console.log( "Listening on " + server_ip_address + ", server_port " + port )
-});
 express()
 	.set('view engine', 'ejs')
 	.use(express.static('./public'))
