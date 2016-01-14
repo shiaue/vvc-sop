@@ -11,7 +11,7 @@ const post = (url, body) => fetch(url, {
 }).then(res => res.json());
 
 export const signin = (username, password) => post('/api/signin', { username, password });
-export const signup = (username, password) => post('/api/signup', { username, password });
+export const signup = (username, password, key) => post('/api/signup', { username, password, key });
 export const signout = () => post('/api/signout');
 
 export const pages = new Firebase('https://vvc-wiki.firebaseio.com/pages');

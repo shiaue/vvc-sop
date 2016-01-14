@@ -12,6 +12,7 @@ export default class Login extends React.Component {
 		return <div className='row'>
 			<p> <input className='u-full-width' placeholder='Username' ref='username' type='text' /> </p>
 			<p> <input className='u-full-width' placeholder='Password' ref='password' type='password' /> </p>
+			<p> <input className='u-full-width' placeholder='Key' ref='key' type='password' /> </p>
 			<p>
 					<button onClick={this.signin}> Sign In </button>
 					<button onClick={this.signup}> Sign Up </button>
@@ -22,9 +23,10 @@ export default class Login extends React.Component {
 	signup = evt => this.sign('up', evt);
 	sign = (name, evt) => {
 		var username = React.findDOMNode(this.refs.username).value,
-			password = React.findDOMNode(this.refs.password).value;
+			password = React.findDOMNode(this.refs.password).value,
+			key = React.findDOMNode(this.refs.key).value;
 
-		API['sign' + name](username, password).then(data => this.props.setUser(data.user));
-	}
+		API['sign' + name](username, password, key).then(data => this.props.setUser(data.user));
+	};
 	signout = evt => API.signout().then(data => this.props.setUser(null));
 }

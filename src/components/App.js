@@ -5,7 +5,7 @@ import Login from './Login';
 import PageList from './PageList';
 
 export default class App extends React.Component {
-	state = { user: USER } // class property (state) instead of getInitialState, ES7 experimental feature
+	state = { user: USER }; // class property (state) instead of getInitialState, ES7 experimental feature
 
 	render () {
 		return <div>

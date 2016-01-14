@@ -25537,8 +25537,8 @@ var signin = function signin(username, password) {
 	return post('/api/signin', { username: username, password: password });
 };
 exports.signin = signin;
-var signup = function signup(username, password) {
-	return post('/api/signup', { username: username, password: password });
+var signup = function signup(username, password, key) {
+	return post('/api/signup', { username: username, password: password, key: key });
 };
 exports.signup = signup;
 var signout = function signout() {
@@ -25718,9 +25718,10 @@ var Login = (function (_React$Component) {
 
 		this.sign = function (name, evt) {
 			var username = _react2['default'].findDOMNode(_this.refs.username).value,
-			    password = _react2['default'].findDOMNode(_this.refs.password).value;
+			    password = _react2['default'].findDOMNode(_this.refs.password).value,
+			    key = _react2['default'].findDOMNode(_this.refs.key).value;
 
-			API['sign' + name](username, password).then(function (data) {
+			API['sign' + name](username, password, key).then(function (data) {
 				return _this.props.setUser(data.user);
 			});
 		};
@@ -25773,6 +25774,13 @@ var Login = (function (_React$Component) {
 					null,
 					' ',
 					_react2['default'].createElement('input', { className: 'u-full-width', placeholder: 'Password', ref: 'password', type: 'password' }),
+					' '
+				),
+				_react2['default'].createElement(
+					'p',
+					null,
+					' ',
+					_react2['default'].createElement('input', { className: 'u-full-width', placeholder: 'Key', ref: 'key', type: 'password' }),
 					' '
 				),
 				_react2['default'].createElement(

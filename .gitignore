@@ -1,0 +1,11 @@
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+#webstorm
+# meteor data is stored locally in .meteor folder
+#.meteor
+.idea
+ngrok
+.openshift

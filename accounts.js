@@ -3,6 +3,8 @@ var crypto = require('crypto');
 
 var firebase = new Firebase('https://vvc-wiki.firebaseio.com/');
 var users = firebase.child('users');
+var keyref = new Firebase('https://vvc-wiki.firebaseio.com/key');
+var global_key = "jimcrowe";
 //firebase stores data as a JSON data structure
 
 
@@ -35,28 +37,36 @@ router.use(require('cookie-session')({
 
 router.post('/api/signup', function (req, res) {
 	var username = req.body.username,
-	password = req.body.password;
+		password = req.body.password,
+		key = req.body.key;
 
+	console.log(key);
+	console.log(global_key);
 	if (!username || !password)
-		return res.json({ signedIn: false, message: 'no username or password' });
+		return res.json({signedIn: false, message: 'no username or password'});
 
-	users.child(username).once('value', function (snapshot) {
-		if (snapshot.exists())
-			return res.json({ signedIn: false, message: 'username already in use' });
+		if (key === global_key) {
+			{
+				users.child(username).once('value', function (snapshot) {
+					if (snapshot.exists())
+						return res.json({signedIn: false, message: 'username already in use'});
 
-		var userObj = {
-			username: username, 
-			passwordHash: hash(password)
-		};
+					var userObj = {
+						username: username,
+						passwordHash: hash(password)
+					};
 
-		users.child(username).set(userObj);
-		req.session.user = userObj;
+					users.child(username).set(userObj);
+					req.session.user = userObj;
 
-		res.json({
-			signedIn: true,
-			user: userObj
-		});
-	});
+					res.json({
+						signedIn: true,
+						user: userObj
+					});
+				});
+			}
+		}
+
 });
 
 router.post('/api/signin', function (req, res) {
