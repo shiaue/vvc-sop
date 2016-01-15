@@ -1,4 +1,4 @@
-# Wicker
+# VVC SOP Application
 
 A live collaborative wiki built on React.js and Firebase
 
@@ -41,4 +41,4 @@ Watch will 'observe' the project and build a new `all.js` file on each change.*
 
 On a different terminal/tab run `node server.js`
 
-Then open [http://localhost:3300](http://localhost:3300) in your browser.
+Then open [http://localhost:8080](http://localhost:8080) in your browser.
