@@ -2,7 +2,7 @@
   "name": "vvc-wiki",
   "version": "1.0.0",
   "engines": {
-    "node": "4.0.0"
+    "node": "5.4.1"
   },
   "description": "A live collaborative wiki built on React.js",
   "main": "server.js",

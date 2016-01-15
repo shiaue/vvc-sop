@@ -25650,7 +25650,7 @@ var App = (function (_React$Component) {
 						_react2['default'].createElement(
 							'h1',
 							null,
-							' VVC SOP Wiki '
+							' VVC Wiki '
 						),
 						_react2['default'].createElement(_Login2['default'], { user: this.state.user, setUser: this.setUser }),
 						_react2['default'].createElement(_PageList2['default'], { user: this.state.user })
