@@ -11,7 +11,7 @@ export default class App extends React.Component {
 		return <div>
 			<div className='row'>
 				<div className='three columns'>
-					<h1> VVC Wiki </h1>
+					<h1> VVC SOP </h1>
 					
 					<Login user={this.state.user} setUser={this.setUser} />
 
