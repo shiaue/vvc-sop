@@ -1,7 +1,13 @@
 # VVC SOP Application
 
-### A live collaborative wiki built on React.js and Firebase database
-### This 
+This is the Vanderbilt Vaccine Center SOP.
+
+A live collaborative wiki built on 
+* React.js 
+* Firebase
+
+
+
 ## Running
 
 To build the project, first run this command:
