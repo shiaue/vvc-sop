@@ -1,0 +1,94 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+	    <title>Vanderbilt Single Sign-on</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <style type="text/css" media="screen">@import 'css/cas.css'/**/;</style>
+	    <!--[if gte IE 6]><style type="text/css" media="screen">@import 'css/ie_cas.css';</style><![endif]-->
+	    <script type="text/javascript" src="js/common_rosters.js"></script>
+	    <link rel="icon" href="/mis-cas/favicon.ico" type="image/x-icon" />
+	</head>
+
+	<body id="cas" onload="init();">
+      
+       <div id="header">
+	        <h1 id="app-name">Single Sign-on</h1>
+	    </div>
+	    <div id="content">
+
+			<form id="fm1" name="loginForm" class="fm-v clearfix" action="/mis-cas/login?service=https%3A%2F%2Fwebapp.mis.vanderbilt.edu%2Fstudent-search%2Fj_spring_cas_security_check" method="post" onsubmit="return submit_login();">
+			    
+                <div class="box" id="login">
+                <!-- Congratulations on bringing CAS online!  The default authentication handler authenticates where usernames equal passwords: go ahead, try it out.  -->
+                    <h2>Enter VunetID and e-Password</h2>
+                    <div class="row">
+                        <label for="username"><span class="accesskey">V</span>unetID:</label>
+						
+						
+						
+						
+						<input id="username" name="username" class="required" tabindex="1" accesskey="n" type="text" value="" size="25" autocomplete="false"/>
+						
+                    </div>
+                    <div class="row">
+                        <label for="password"><span class="accesskey">e</span>-Password:</label>
+						
+						
+						<input id="password" name="password" class="required" tabindex="2" accesskey="p" type="password" value="" size="25" autocomplete="off"/>
+                    </div>
+                    <div class="row check">
+                        <input id="warn" name="warn" value="true" tabindex="3" accesskey="w" type="checkbox" />
+                        <label for="warn"><span class="accesskey">W</span>arn me before logging me into other sites.</label>
+                    </div>
+                    <div class="row btn-row">
+						<input type="hidden" name="lt" value="_c0B69C2D6-340C-4A1F-647C-CA20F9834308_kEB1221A1-F0EB-9A6F-6689-357CB5F8ADC4" />
+						<input type="hidden" name="_eventId" value="submit" />
+
+                        <input class="btn-submit" name="submit" accesskey="l" value="LOGIN" tabindex="4" type="submit" />
+                        <input class="btn-reset" name="reset" accesskey="c" value="CLEAR" tabindex="5" type="reset" />
+                    </div>
+                </div>
+               
+	            <div id="sidebar">
+	                <p>Vanderbilt Single Sign-on grants you access to a number of web applications with a single login.</p>
+	                <p>Before you leave this computer, be certain to log out of Single Sign-on by clicking the Log Out button and following any instructions that may appear on a log out confirmation screen. Alternatively, you can log out by simply closing all web browsers.</p>
+	                <p>Note: Navigating away from the web page does not log you out of Single Sign-on.</p>
+	                <p>By taking these steps you insure the security and privacy of data important both to you and to Vanderbilt University.</p>
+	            </div>
+        	</form>
+        	
+<script type="text/javascript" language="JavaScript">
+function submit_login()
+{
+   // vu - forcing lowercase of username; pervious mis-cas versions forces lowercase; will continue this practice.
+   document.loginForm.username.value = document.loginForm.username.value.toLowerCase();
+   return true;
+}
+</script>         	
+
+</div>
+<div id="footer">
+	<div> 
+		<p>A <a href="http://www.vanderbilt.edu/vunet">VunetID</a> and <a
+			href="http://vunetid.vanderbilt.edu/epassword"> e-password</a> are
+		required. If you have login difficulties, please send an e-mail message
+		to <a href="mailto:epass@vanderbilt.edu">epass@vanderbilt.edu</a>
+		explaining the problem.</p>
+      <p>v3.3.5-2.0.2WL</p>
+	
+	    <p class="disclaimer">For security reasons, quit your web browser when you are done
+	    accessing services that require authentication!</p>
+	</div>
+</div>
+</body>
+</html>
+

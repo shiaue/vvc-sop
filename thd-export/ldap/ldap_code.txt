@@ -1,0 +1,1 @@
+ldapsearch -x -H ldap://ldap.vunetid.vanderbilt.edu -b "dc=vanderbilt, dc=edu" -s sub "cn=elton shiau"

@@ -1,0 +1,88 @@
+
+
+<script type="text/javascript">
+	function clickclear(thisfield, defaulttext) {
+		if (thisfield.value == defaulttext) {
+			thisfield.value = "";
+		}
+	}
+	
+	function clickrecall(thisfield, defaulttext) {
+		if (thisfield.value == "") {
+			thisfield.value = defaulttext;
+		}
+	}
+</script>	
+
+
+
+
+<html>
+<head>
+	<title>THD Mobile</title>
+	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<link rel="apple-touch-icon-precomposed" href="images/icon.png"/>
+	<link rel="stylesheet" href="themes/THDMobile40.min.css" />
+	
+  	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.min.css" /> 
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+	
+
+</head> 
+<body> 
+
+<div data-role="page" class="type-interior" data-theme="b">
+
+    <div data-role="header" data-position="inline">
+        
+	        <a href="main_menu.cfm" data-rel="back">Back</a>
+        
+        <h1>Student Info</h1>
+        <a href="main_menu.cfm" data-theme="b">Home</a>
+	</div>   
+           
+    <div data-role="content">
+	
+
+
+
+	<div data-role="fieldcontain" align="center">
+		Term Selected: 
+			<a href="tf_selected.cfm" data-role="button" data-inline="true" data-mini="true">
+				Spring 2017 - 4/29/2017
+			</a>
+		
+	</div>
+
+		<H2>Tengku Ahmad Faizal, Tengku Hafifie (000286798)</H2>
+	  
+		Cell Phone: <a href="tel:"></a><br />
+		Email: <a href="mailto:tengku.h.tengku.ahmad.faizal@Vanderbilt.Edu">tengku.h.tengku.ahmad.faizal@Vanderbilt.Edu</a><br />
+		Personal Email: <a href="mailto:tengkuth">tengkuth</a><br />
+		
+        
+		<ul></ul>
+        
+        
+        	<p>No room assignment for this term</p>
+        
+	   <div data-role="collapsible">
+         <h3>Photo</h3>
+		 	<img src="https://webapp.mis.vanderbilt.edu/student-search/Photo.action?userCode=QfGH5otbYzk%3D&picCode=%2BR0PeymCZlMPB%2Bvz80zJGg%3D%3D" width="100%"> 
+      </div> 
+	  
+			<HR>
+			
+              <a href="mailto:tengku.h.tengku.ahmad.faizal@Vanderbilt.Edu" data-role="button" data-theme="b">Email</a>
+			
+        
+
+    
+    </div> 
+</div>

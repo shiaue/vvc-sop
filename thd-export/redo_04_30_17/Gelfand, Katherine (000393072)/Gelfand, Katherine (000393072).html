@@ -1,0 +1,193 @@
+
+
+<script type="text/javascript">
+	function clickclear(thisfield, defaulttext) {
+		if (thisfield.value == defaulttext) {
+			thisfield.value = "";
+		}
+	}
+	
+	function clickrecall(thisfield, defaulttext) {
+		if (thisfield.value == "") {
+			thisfield.value = defaulttext;
+		}
+	}
+</script>	
+
+
+
+
+<html>
+<head>
+	<title>THD Mobile</title>
+	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<link rel="apple-touch-icon-precomposed" href="images/icon.png"/>
+	<link rel="stylesheet" href="themes/THDMobile40.min.css" />
+	
+  	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.min.css" /> 
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+	
+
+</head> 
+<body> 
+
+<div data-role="page" class="type-interior" data-theme="b">
+
+    <div data-role="header" data-position="inline">
+        
+	        <a href="main_menu.cfm" data-rel="back">Back</a>
+        
+        <h1>Student Info</h1>
+        <a href="main_menu.cfm" data-theme="b">Home</a>
+	</div>   
+           
+    <div data-role="content">
+	
+
+
+
+	<div data-role="fieldcontain" align="center">
+		Term Selected: 
+			<a href="tf_selected.cfm" data-role="button" data-inline="true" data-mini="true">
+				Spring 2017 - 4/29/2017
+			</a>
+		
+	</div>
+
+		<H2>Gelfand, Katherine  (000393072)</H2>
+	  
+		Cell Phone: <a href="tel:314/707-9825">314/707-9825</a><br />
+		Email: <a href="mailto:katherine.gelfand@vanderbilt.edu">katherine.gelfand@vanderbilt.edu</a><br />
+		Personal Email: <a href="mailto:gelfank">gelfank</a><br />
+		
+        
+		<ul><font color="red"><li>Greek Member.</li></font><font color="red"><li>Peabody Student.</li></font><font color="red"><li>Under 21.</li></font></ul>
+        
+         <p>Spring 2017:<br />
+					Scales House 2322<br />
+					1/6/2017 to 5/6/2017<br />
+					
+					</p>
+					
+          <div data-role="collapsible">
+           <h3>Roommates / Suitemates</h3>  
+					
+               <ul data-role="listview" data-inset="true">
+               
+                          <li>
+                          <a href="CheckInOut.cfm?StudentID=15548" data-transition="flip">
+						  
+							<h3>Nicolette Granata</h3>
+						  
+                          <p>1/6/2017 - 5/6/2017</p>
+                          <p>Checked In: 3/30/2017</p>
+						  <p>Checked Out: 4/28/2017</p></em></a>
+                          </li>
+						             
+               </ul>
+             
+               <ul data-role="listview" data-inset="true">
+			   <h3><em>Suitemates</em></h3>
+               
+							  <li>
+							  <a href="CheckInOut.cfm?StudentID=14133" data-transition="flip">
+							  <em><h3>Rebecca Baldwin</h3>
+							  <p>1/6/2017 - 5/6/2017</p>
+							  <p>Checked In: 3/30/2017</p>
+							  <p>Checked Out: This student has not checked out yet.</p></em></a>
+							  </li>
+						
+							  <li>
+							  <a href="CheckInOut.cfm?StudentID=15560" data-transition="flip">
+							  <em><h3>Charlotte Buck</h3>
+							  <p>1/6/2017 - 5/6/2017</p>
+							  <p>Checked In: 3/30/2017</p>
+							  <p>Checked Out: This student has not checked out yet.</p></em></a>
+							  </li>
+						           
+               	</ul>
+                     
+          </div>
+	
+          <div data-role="collapsible">
+             <h3>Check-In/Out</h3>
+             
+            
+                    <form action="ProcessCheckIn.cfm" method="post">
+                    <input type="hidden" name="txtStudent" value="18996">
+                    <input type="hidden" name="txtAssign" value="154382">
+                    <input type="hidden" name="txtTF" value="137">
+                    <input type="hidden" name="txtChkInDate" value="2017-01-06 00:00:00.0">
+                    <input type="hidden" name="txtChkOutDate" value="2017-05-06 00:00:00.0">        
+            
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            Scales House 2322<br /> 
+                            Spring 2017<br />
+                            P.O. Box: 
+                            
+                                N/A
+                            
+                            <br />
+                            Phone:
+                            
+                                N/A
+                                           
+                        </div>
+                        <div class="ui-block-b">
+                            Scheduled Check-In: <BR />1/6/2017<br />
+                            
+                                Checked In on:<BR />3/30/2017<br />
+                            
+							<br />
+                            Scheduled Check-Out: <BR />5/6/2017<br />
+                            
+                                NOT Checked Out<br />
+                            
+                        </div>
+					 </div>
+					 <div data-role="content">
+                    
+						<br />
+						
+							There is no additional check out information to confirm.
+							<input type="hidden" name="CheckOutFields" id="CheckOutFields" value="N" />
+						
+						
+                        <input type="submit" data-theme="b" name="btnCheckMethod" id="btnCheckMethod" value="Check Out" onclick="return confirm('Are you sure you want to Check-OUT this student? \nClick OK to check OUT the student and Cancel to cancel the operation.');"/>
+						<input type="hidden" name="Process" id="Process" value="Moved Out" />
+            
+                        
+					</div>
+                      
+                    </form>	      
+            
+                    
+                            
+                
+         </div>        
+        
+            <a href="rcr_inspection_type.cfm?hall_id=12&floor=3&room=2322&src=student" data-theme="b" data-role="button">RCR - Scales House 2322</a>              
+             
+              <a href="work_order.cfm?hall_id=12&floor=3&title=&room=2322" data-theme="b" data-role="button">Work Order</a>  
+    	
+	   <div data-role="collapsible">
+         <h3>Photo</h3>
+		 	<img src="https://webapp.mis.vanderbilt.edu/student-search/Photo.action?userCode=QfGH5otbYzk%3D&picCode=8rX%2Fo85AJxA%3D" width="100%"> 
+      </div> 
+	  
+			<HR>
+			
+              <a href="mailto:katherine.gelfand@vanderbilt.edu" data-role="button" data-theme="b">Email</a>
+			
+        
+
+    
+    </div> 
+</div>
